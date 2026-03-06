@@ -1,0 +1,359 @@
+@font-face {
+  font-family: "Minecraft";
+  src: url(Font/minecraft/Minecraft.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Video Overlay */
+.intro {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  transition: opacity 3s ease;
+}
+
+.intro video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hidden state */
+.intro.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Main content hidden at first */
+.main-content {
+  opacity: 0;
+  transition: opacity 3s ease;
+}
+
+.main-content.show {
+  opacity: 1;
+}
+
+/* Portfolio Design Mobile First*/
+.navigation-container {
+  position: fixed;
+  top: 0; /* stick to top */
+  left: 0;
+  width: 100%;
+  background-color: rgb(66, 66, 66);
+  padding-bottom: 5px;
+  z-index: 1000;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  background-color: rgb(99, 99, 99);
+  padding: 20px 20px 10px 20px;
+}
+
+.nav-bar img {
+  height: 50px;
+}
+
+.nav-bar button {
+  padding: 0;
+  border: none;
+}
+
+.nav-bar ul {
+  list-style: none;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-bar .navigation-content a {
+  text-decoration: none;
+  color: black;
+}
+/* Popup menu Side */
+body.show-mobile-menu header::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.nav-bar .navigation-content {
+  display: block;
+  position: fixed;
+  left: -350px;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0;
+  background: white;
+  margin: 0;
+  z-index: 10000;
+  border-radius: 0 20px 20px 0;
+  box-shadow: 7px 0px 0px 5px gray;
+  transition: left 0.3s ease;
+}
+
+body.show-mobile-menu .nav-bar .navigation-content {
+  left: 0;
+}
+
+.nav-bar .navigation-content .content {
+  display: block;
+  margin-top: 50px;
+  color: black;
+  font-size: 25px;
+}
+
+.nav-bar #menu-close-button {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+/* Button Design */
+.box-button {
+  cursor: pointer;
+  border: 4px solid black;
+  background-color: gray;
+  padding-bottom: 10px;
+  transition: 0.1s ease-in-out;
+  user-select: none;
+
+  width: 200px;
+  text-align: center;
+}
+
+.button {
+  background-color: #dddddd;
+  border: 4px solid #fff;
+  padding: 3px 8px;
+}
+
+.button span {
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  font-family: "Minecraft";
+}
+
+.box-button:active {
+  padding: 0;
+  margin-bottom: 10px;
+  transform: translateY(10px);
+}
+
+/* Hero Section */
+
+.section-content {
+  position: relative; /* sits above the video */
+  z-index: 1;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  height: 100%;
+  /* full hero height */
+}
+
+/* Hero container */
+.hero-content {
+  position: relative; /* needed so video can be absolute inside */
+  width: 100%;
+  height: 100vh; /* full viewport height */
+  overflow: hidden; /* prevent scrollbars */
+}
+
+/* Video background */
+.hero-content .background-clip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* scales video to cover container */
+  z-index: -1; /* behind content */
+}
+
+.text-description {
+  opacity: 0; /* hidden initially */
+  font-family: "Minecraft";
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 4px 5px 0 5px;
+  color: white;
+
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translateY(100%);
+  animation: slideIn 1s ease-in-out forwards; /* fade in over 1s */
+  animation-delay: 6s; /* wait 3 seconds before starting */
+}
+
+.text-description-second {
+  opacity: 0; /* hidden initially */
+  font-family: "Minecraft";
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 4px 5px 0 5px;
+  color: white;
+
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translateY(100%);
+  animation: slideIn 1s ease-in-out forwards; /* fade in over 1s */
+  animation-delay: 6.3s; /* wait 3 seconds before starting */
+}
+/* About me */
+.about-me-container {
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.img-container img {
+  width: 250px;
+  height: 250px;
+  border-radius: 25px;
+}
+
+.hero-details {
+  margin-top: 20px;
+  padding-top: 4px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+.name {
+  overflow: hidden;
+  font-family: "Minecraft";
+  font-size: 1.5rem;
+  margin-inline: auto;
+
+  white-space: nowrap;
+  border-right: 2px solid;
+
+  animation:
+    typing 3s steps(22) forwards,
+    blink 1s step-end infinite;
+  animation-delay: 3s;
+}
+
+.desc {
+  overflow: hidden;
+  font-family: "Minecraft";
+  font-size: 1.5rem;
+  margin-inline: auto;
+
+  white-space: nowrap;
+  border-right: 2px solid;
+
+  animation:
+    typing 3s steps(22) forwards,
+    blink 1s step-end infinite;
+  animation-delay: 6s;
+}
+
+/* Cards */
+.carousel {
+  cursor: grab;
+  user-select: none;
+}
+
+.carousel.dragging {
+  cursor: grabbing;
+}
+.carousel-section {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+  background: #121212;
+}
+
+.carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 70%;
+  max-width: 280px;
+  height: 150px;
+
+  scroll-snap-align: center;
+  background: #444;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Minecraft";
+  border-radius: 10px;
+
+  flex-shrink: 0;
+
+  transition: transform 1.5s ease;
+}
+
+.card:hover {
+  transform: scale(1.08);
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
