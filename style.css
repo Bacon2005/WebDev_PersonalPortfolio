@@ -198,9 +198,7 @@ body.show-mobile-menu .nav-bar .navigation-content {
   object-fit: cover; /* scales video to cover container */
   z-index: -1; /* behind content */
 }
-main {
-  background-color: #121212;
-}
+
 .text-description {
   opacity: 0; /* hidden initially */
   font-family: "Minecraft";
@@ -339,6 +337,9 @@ main {
 }
 
 /* Tools area */
+.tools {
+  background-color: #121212;
+}
 .tools-list {
   list-style: none;
 }
