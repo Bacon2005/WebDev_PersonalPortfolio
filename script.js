@@ -8,6 +8,12 @@ const nav = document.getElementById("nav");
 const menuOpenButton = document.querySelector("#menu-open-button");
 const menuCloseButton = document.querySelector("#menu-close-button");
 
+AOS.init({
+  once: true, // true = animate only once; false = repeat when scrolling
+  offset: 100, // offset (px) from the trigger point
+  duration: 1000, // default duration
+});
+
 // video.addEventListener("ended", () => {
 //   intro.classList.add("fade-out");
 //   main.classList.add("show");
@@ -28,46 +34,19 @@ toggle.addEventListener("click", () => {
   nav.classList.toggle("open");
 });
 
-//carousel
-const carousel = document.getElementById("carousel");
+const elements = document.querySelectorAll(".name, .desc");
 
-let isDown = false; // is mouse pressed
-let startX; // starting X coordinate
-let scrollLeftStart; // initial scrollLeft when drag starts
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("play");
+      }
+    });
+  },
+  {
+    threshold: 0.5,
+  },
+);
 
-// Mouse down → start drag
-carousel.addEventListener("mousedown", (e) => {
-  isDown = true;
-  carousel.classList.add("dragging");
-
-  startX = e.pageX - carousel.offsetLeft;
-  scrollLeftStart = carousel.scrollLeft;
-});
-
-// Mouse leave or up → stop drag
-carousel.addEventListener("mouseup", () => {
-  isDown = false;
-  carousel.classList.remove("dragging");
-});
-
-carousel.addEventListener("mouseleave", () => {
-  isDown = false;
-  carousel.classList.remove("dragging");
-});
-
-// Mouse move → drag scroll
-carousel.addEventListener("mousemove", (e) => {
-  if (!isDown) return;
-
-  e.preventDefault(); // prevent text selection
-
-  const x = e.pageX - carousel.offsetLeft;
-  const walk = (x - startX) * 2; // scroll speed multiplier
-  carousel.scrollLeft = scrollLeftStart - walk;
-});
-
-// Optional: scroll wheel to horizontal scroll
-carousel.addEventListener("wheel", (e) => {
-  e.preventDefault();
-  carousel.scrollLeft += e.deltaY;
-});
+elements.forEach((el) => observer.observe(el));

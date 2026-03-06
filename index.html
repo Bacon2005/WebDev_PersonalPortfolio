@@ -9,6 +9,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Video Intro -->
@@ -65,7 +69,7 @@
         <div class="section-content">
           <div class="text-description-second">
             <span class="delayed-text"
-              >Creating Visually engaging digital experiences through design,
+              >Creating Visually unique digital experiences through design,
               code, and multimedia.</span
             >
           </div>
@@ -80,10 +84,14 @@
       <section class="aboutme">
         <div class="about-me-container">
           <div class="hero-details">
-            <span class="name">Hello, I am Tyrone Niere</span>
+            <span class="name" data-aos="fade-up" data-aos-duration="1000"
+              >Hello, I am Tyrone Niere</span
+            >
           </div>
           <div class="hero-details">
-            <span class="desc">a Juinor Software Engineer</span>
+            <span class="desc" data-aos="fade-up" data-aos-duration="1500"
+              >a Juinor Software Engineer</span
+            >
           </div>
           <div class="img-container">
             <img
@@ -96,6 +104,9 @@
         <!-- Cards Language-->
         <div class="cards">
           <div class="carousel-section">
+            <div class="text-container">
+              <span class="text"> /Skills... </span>
+            </div>
             <div class="carousel" id="carousel">
               <div class="card">Project 1</div>
               <div class="card">Project 2</div>
@@ -105,8 +116,42 @@
             </div>
           </div>
         </div>
+        <div class="learn-more">
+          <div
+            class="button-container"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            <div class="box-button">
+              <!-- Goes to About.html -->
+              <div class="button"><span>Learn More</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tools">
+        <div class="tools-content">
+          <div class="text-container">
+            <span class="text">
+              /Tools and <span style="color: yellow">Software</span>
+            </span>
+          </div>
+          <div class="tool-list">
+            <ul class="tools-list">
+              <li class="tool"><i class="fa-brands fa-github"></i>Github</li>
+              <li class="tool"><i class="fa-solid fa-code"></i>Vscode</li>
+              <li class="tool"><i class="fa-brands fa-figma"></i>Figma</li>
+              <li class="tool">
+                <i class="fa-brands fa-linkedin"></i>LinkedIn
+              </li>
+              <li class="tool"><i class="fa-solid fa-envelope"></i>Gmail</li>
+            </ul>
+          </div>
+        </div>
       </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

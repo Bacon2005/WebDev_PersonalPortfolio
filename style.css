@@ -106,6 +106,7 @@ body.show-mobile-menu header::before {
   width: 300px;
   height: 100%;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   padding: 80px 0;
@@ -197,7 +198,9 @@ body.show-mobile-menu .nav-bar .navigation-content {
   object-fit: cover; /* scales video to cover container */
   z-index: -1; /* behind content */
 }
-
+main {
+  background-color: #121212;
+}
 .text-description {
   opacity: 0; /* hidden initially */
   font-family: "Minecraft";
@@ -210,7 +213,7 @@ body.show-mobile-menu .nav-bar .navigation-content {
   background-color: rgba(0, 0, 0, 0.5);
   transform: translateY(100%);
   animation: slideIn 1s ease-in-out forwards; /* fade in over 1s */
-  animation-delay: 6s; /* wait 3 seconds before starting */
+  animation-delay: 3s; /* wait 3 seconds before starting */
 }
 
 .text-description-second {
@@ -225,7 +228,7 @@ body.show-mobile-menu .nav-bar .navigation-content {
   background-color: rgba(0, 0, 0, 0.5);
   transform: translateY(100%);
   animation: slideIn 1s ease-in-out forwards; /* fade in over 1s */
-  animation-delay: 6.3s; /* wait 3 seconds before starting */
+  animation-delay: 3.3s; /* wait 3 seconds before starting */
 }
 /* About me */
 .about-me-container {
@@ -234,6 +237,9 @@ body.show-mobile-menu .nav-bar .navigation-content {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.img-container {
+  padding-top: 20px;
 }
 .img-container img {
   width: 250px;
@@ -251,21 +257,7 @@ body.show-mobile-menu .nav-bar .navigation-content {
   /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
-.name {
-  overflow: hidden;
-  font-family: "Minecraft";
-  font-size: 1.5rem;
-  margin-inline: auto;
-
-  white-space: nowrap;
-  border-right: 2px solid;
-
-  animation:
-    typing 3s steps(22) forwards,
-    blink 1s step-end infinite;
-  animation-delay: 3s;
-}
-
+.name,
 .desc {
   overflow: hidden;
   font-family: "Minecraft";
@@ -278,23 +270,34 @@ body.show-mobile-menu .nav-bar .navigation-content {
   animation:
     typing 3s steps(22) forwards,
     blink 1s step-end infinite;
-  animation-delay: 6s;
+}
+
+.learn-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #121212;
+  padding-bottom: 40px;
 }
 
 /* Cards */
-.carousel {
-  cursor: grab;
-  user-select: none;
-}
-
-.carousel.dragging {
-  cursor: grabbing;
-}
 .carousel-section {
   width: 100%;
   overflow: hidden;
   padding: 40px 0;
   background: #121212;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-family: "Minecraft";
+  color: white;
+  font-size: 30px;
 }
 
 .carousel {
@@ -328,11 +331,22 @@ body.show-mobile-menu .nav-bar .navigation-content {
 
   flex-shrink: 0;
 
-  transition: transform 1.5s ease;
+  transition: transform 1s ease;
 }
 
 .card:hover {
   transform: scale(1.08);
+}
+
+/* Tools area */
+.tools-list {
+  list-style: none;
+}
+.tools-content {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 @keyframes slideIn {
