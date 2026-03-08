@@ -154,10 +154,16 @@ body.show-mobile-menu .nav-bar .navigation-content {
   padding: 3px 8px;
 }
 
-.button span {
+.button a {
+  text-decoration: none;
+  color: black;
   font-size: 1.2em;
   letter-spacing: 1px;
   font-family: "Minecraft";
+}
+
+.button a:visited{
+  color: black;
 }
 
 .box-button:active {
@@ -165,6 +171,7 @@ body.show-mobile-menu .nav-bar .navigation-content {
   margin-bottom: 10px;
   transform: translateY(10px);
 }
+
 
 /* Hero Section */
 
@@ -342,6 +349,20 @@ body.show-mobile-menu .nav-bar .navigation-content {
 }
 .tools-list {
   list-style: none;
+}
+.tool-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tool-list .tool{
+  font-family: "Minecraft";
+  color: white;
+  padding: 10px 0 10px 0;
+}
+
+.tool-list .tool i{
+  padding-right: 30px;
 }
 .tools-content {
   display: flex;
