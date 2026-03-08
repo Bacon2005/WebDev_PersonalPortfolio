@@ -14,14 +14,14 @@ AOS.init({
   duration: 1000, // default duration
 });
 
-video.addEventListener("ended", () => {
-  intro.classList.add("fade-out");
-  main.classList.add("show");
+// video.addEventListener("ended", () => {
+//   intro.classList.add("fade-out");
+//   main.classList.add("show");
 
-  setTimeout(() => {
-    intro.style.display = "none";
-  }, 3000); // match your 3s CSS transition
-});
+//   setTimeout(() => {
+//     intro.style.display = "none";
+//   }, 3000); // match your 3s CSS transition
+// });
 
 menuOpenButton.addEventListener("click", () => {
   document.body.classList.toggle("show-mobile-menu");

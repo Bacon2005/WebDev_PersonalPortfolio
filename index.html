@@ -16,11 +16,11 @@
   </head>
   <body>
     <!-- Video Intro -->
-    <div class="intro">
+    <!-- <div class="intro">
       <video id="introVideo" autoplay muted playsinline>
         <source src="videos/Boom.mp4" type="video/mp4" />
       </video>
-    </div>
+    </div> -->
 
     <!-- Intro to Portfolio -->
     <header class="header">
@@ -67,21 +67,26 @@
           class="background-clip"
         ></video>
         <div class="section-content">
+          <div class="text-description">
+            <span class="delayed-text"
+              >Web Developer • UI designer • Software Engineer</span
+            >
+          </div>
           <div class="text-description-second">
             <span class="delayed-text"
               >Creating Visually unique digital experiences through design,
               code, and multimedia.</span
             >
           </div>
-          <div class="text-description">
-            <span class="delayed-text"
-              >Web Developer • UI designer • Software Engineer</span
-            >
+          <div class="box-button">
+            <div class="button">
+              <a href="#about-me">About Me</a>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="aboutme">
+      <section class="aboutme" id="about-me">
         <div class="about-me-container">
           <div class="hero-details">
             <span class="name" data-aos="fade-up" data-aos-duration="1000"
@@ -90,10 +95,15 @@
           </div>
           <div class="hero-details">
             <span class="desc" data-aos="fade-up" data-aos-duration="1500"
-              >a Juinor Software Engineer</span
+              >a Juinor
+              <span style="color: yellow">Software Engineer</span></span
             >
           </div>
-          <div class="img-container" data-aos="fade-up" data-aos-duration="2000">
+          <div
+            class="img-container"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
             <img
               src="images/profile_pic.jpg"
               alt="profile_pic"
@@ -124,7 +134,9 @@
           >
             <div class="box-button">
               <!-- Goes to About.html -->
-              <div class="button"><a href="Pages/about.html">Learn More</a></div>
+              <div class="button">
+                <a href="Pages/about.html">Learn More</a>
+              </div>
             </div>
           </div>
         </div>
@@ -137,17 +149,49 @@
               /Tools and <span style="color: yellow">Software</span>
             </span>
           </div>
-          <div class="tool-list">
-            <ul class="tools-list">
-              <li class="tool"><i class="fa-brands fa-github"></i>Github</li>
-              <li class="tool"><i class="fa-solid fa-code"></i>Vscode</li>
-              <li class="tool"><i class="fa-brands fa-figma"></i>Figma</li>
-              <li class="tool">
-                <i class="fa-brands fa-linkedin"></i>LinkedIn
-              </li>
-              <li class="tool"><i class="fa-solid fa-envelope"></i>Gmail</li>
-            </ul>
-          </div>
+
+          <ul class="tools-list">
+            <li class="tool" data-aos="fade-up" data-aos-duration="1000">
+              <div class="tool-inner">
+                <i class="fa-brands fa-github"></i>
+                <span>Github</span>
+              </div>
+            </li>
+
+            <li class="tool" data-aos="fade-up" data-aos-duration="1200">
+              <div class="tool-inner">
+                <i class="fa-solid fa-code"></i>
+                <span>VS Code</span>
+              </div>
+            </li>
+
+            <li class="tool" data-aos="fade-up" data-aos-duration="1400">
+              <div class="tool-inner">
+                <i class="fa-brands fa-figma"></i>
+                <span>Figma</span>
+              </div>
+            </li>
+
+            <li class="tool" data-aos="fade-up" data-aos-duration="1600">
+              <div class="tool-inner">
+                <i class="fa-brands fa-linkedin"></i>
+                <span>LinkedIn</span>
+              </div>
+            </li>
+
+            <li class="tool" data-aos="fade-up" data-aos-duration="1800">
+              <div class="tool-inner">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Gmail</span>
+              </div>
+            </li>
+            <li class="tool" data-aos="fade-up" data-aos-duration="2000">
+              <div class="tool-inner">
+                <i class="fa-brands fa-java"></i>
+                <span>Java</span>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
     </main>
