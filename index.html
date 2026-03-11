@@ -17,7 +17,7 @@
   <body>
     <!-- Video Intro -->
     <!-- <div class="intro">
-      <video id="introVideo" autoplay muted playsinline>
+      <video id="introVideo" autoplay muted playsinline preload="auto">
         <source src="videos/Boom.mp4" type="video/mp4" />
       </video>
     </div> -->
@@ -64,6 +64,7 @@
           loop
           play-inline
           src="videos/Background2.mp4"
+          preload="auto"
           class="background-clip"
         ></video>
         <div class="section-content">
@@ -78,9 +79,11 @@
               code, and multimedia.</span
             >
           </div>
-          <div class="box-button">
-            <div class="button">
-              <a href="#about-me">Scroll down</a>
+          <div class="button-container" data-aos="zoom-in-up">
+            <div class="box-button">
+              <div class="button">
+                <a href="#about-me">Scroll down</a>
+              </div>
             </div>
           </div>
         </div>
@@ -99,20 +102,22 @@
               <span style="color: yellow">Software Engineer</span></span
             >
           </div>
-          <div
-            class="img-container"
-            data-aos="fade-up"
-            data-aos-duration="2000"
-          >
+          <div class="img-container">
             <img
               src="images/profile_pic.jpg"
               alt="profile_pic"
               class="profile-pic"
             />
           </div>
-          <div class="box-button">
-            <div class="button">
-              <a href="Pages/about.html">Learn More About Me</a>
+          <div
+            class="button-container"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            <div class="box-button">
+              <div class="button">
+                <a href="Pages/about.html">Learn More About Me</a>
+              </div>
             </div>
           </div>
         </div>
@@ -169,6 +174,9 @@
             </li>
           </ul>
         </div>
+      </section>
+
+      <section class="cards-section">
         <!-- Cards Language-->
         <div class="cards">
           <div class="carousel-section">
@@ -193,8 +201,29 @@
             <div class="box-button">
               <!-- Goes to About.html -->
               <div class="button">
-                <a href="Pages/about.html">Learn More</a>
+                <a href="Pages/about.html">See More</a>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact">
+        <div class="contact-content">
+          <h2 class="section-title">
+            /Let's <span style="color: yellow">Work</span> Together
+          </h2>
+
+          <p class="contact-text">
+            Have a project in mind or just want to say hello? I'm always open to
+            discussing new ideas, creative projects, or opportunities to be part
+            of something amazing.
+          </p>
+
+          <div class="box-button">
+            <!-- Goes to About.html -->
+            <div class="button">
+              <a href="Pages/contact.html">Contact Me</a>
             </div>
           </div>
         </div>
