@@ -25,14 +25,15 @@ AOS.init({
 
 menuOpenButton.addEventListener("click", () => {
   document.body.classList.toggle("show-mobile-menu");
+  console.log("Burger pressed");
 });
 
 menuCloseButton.addEventListener("click", () => menuOpenButton.click());
 
-toggle.addEventListener("click", () => {
-  toggle.classList.toggle("active");
-  nav.classList.toggle("open");
-});
+// toggle.addEventListener("click", () => {
+//   toggle.classList.toggle("active");
+//   nav.classList.toggle("open");
+// });
 
 const elements = document.querySelectorAll(".name, .desc");
 

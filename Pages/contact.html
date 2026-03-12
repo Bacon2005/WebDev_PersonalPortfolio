@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Tyrone Niere</title>
+
+    <link rel="stylesheet" href="../style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <header class="header">
+      <div class="navigation-container">
+        <nav class="nav-bar">
+          <img src="../images/logo.png" alt="logo" class="logo" />
+
+          <ul class="navigation-content">
+            <a id="menu-close-button" class="fas fa-times"></a>
+
+            <li class="content">
+              <div class="box-button">
+                <div class="button">
+                  <a href="../index.html">Home</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="content">
+              <div class="box-button">
+                <div class="button">
+                  <a href="about.html">About</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="content">
+              <div class="box-button">
+                <div class="button">
+                  <a href="../index.html#carousel">Work</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="content">
+              <div class="box-button">
+                <div class="button">
+                  <a href="contact.html">Contact</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <a id="menu-open-button" class="fas fa-bars"></a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Contact Section -->
+
+    <main>
+      <section class="contact-page">
+        <div class="contact-container">
+          <h1 class="section-title" data-aos="fade-up">
+            /Contact <span style="color: yellow">Me</span>
+          </h1>
+
+          <p class="contact-intro" data-aos="fade-up" data-aos-delay="200">
+            Have a project idea, collaboration, or opportunity? Feel free to
+            send me a message!
+          </p>
+
+          <!-- Contact Form -->
+
+          <form class="contact-form" data-aos="fade-up" data-aos-delay="400">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" placeholder="Your Name" required />
+            </div>
+
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="Your Email" required />
+            </div>
+
+            <div class="form-group">
+              <label>Message</label>
+              <textarea rows="6" placeholder="Your Message"></textarea>
+            </div>
+
+            <div class="box-button">
+              <div class="button">
+                <button type="submit">Send Message</button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Social Links -->
+
+          <div class="contact-links" data-aos="fade-up" data-aos-delay="600">
+            <ul class="contact-link">
+              <li>
+                <a href="#">
+                  <i class="fa-brands fa-github"></i>
+                  Github
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa-brands fa-linkedin"></i>
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="niere.tyrone@email.com">
+                  <i class="fa-solid fa-envelope"></i>
+                  Email
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../script.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

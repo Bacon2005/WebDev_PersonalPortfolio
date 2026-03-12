@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #121212;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -551,8 +555,8 @@ body.show-mobile-menu .nav-bar .navigation-content {
   color: white;
 }
 .contact-content {
-  max-width: 700px;
-  margin: auto;
+  width: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -565,6 +569,121 @@ body.show-mobile-menu .nav-bar .navigation-content {
   color: #ccc;
   font-size: 1.1rem;
   line-height: 1.6;
+}
+
+/* Contact.html css */
+
+/* Contact Page */
+
+.contact-page {
+  background-color: #121212;
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 60px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  width: 90%;
+  max-width: 600px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-intro {
+  font-family: "Minecraft";
+  color: #ccc;
+  text-align: center;
+  margin: 20px 0 20px;
+}
+
+/* Form */
+
+.contact-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-family: "Minecraft";
+  color: white;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+  font-family: "Minecraft";
+  padding: 10px;
+
+  background: #1b1b1b;
+  border: 3px solid #2e2e2e;
+  color: white;
+
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border: 3px solid yellow;
+}
+
+/* Button fix */
+
+.contact-form button {
+  font-family: "Minecraft";
+  font-size: 1.1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Social Links */
+
+.contact-links {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.contact-link {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.contact-link li {
+  display: inline-block;
+  font-size: 15px;
+}
+
+.contact-links a {
+  font-family: "Minecraft";
+  color: white;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  transition: color 0.25s ease;
+}
+
+.contact-links a:hover {
+  color: yellow;
 }
 
 /* Animations */
