@@ -31,7 +31,7 @@
             <a id="menu-close-button" class="fas fa-times"></a>
             <li class="content">
               <div class="box-button">
-                <div class="button"><a href="#">Home</a></div>
+                <div class="button"><a href="#Home">Home</a></div>
               </div>
             </li>
             <li class="content">
@@ -46,7 +46,9 @@
             </li>
             <li class="content">
               <div class="box-button">
-                <div class="button"><a href="#">Contact</a></div>
+                <div class="button">
+                  <a href="Pages/contact.html">Contact</a>
+                </div>
               </div>
             </li>
           </ul>
@@ -57,7 +59,7 @@
 
     <!-- Introduction -->
     <main>
-      <section class="hero-content">
+      <section class="hero-content" id="Home">
         <video
           autoplay
           muted
@@ -102,7 +104,11 @@
               <span style="color: yellow">Software Engineer</span></span
             >
           </div>
-          <div class="img-container">
+          <div
+            class="img-container"
+            data-aos="fade-up"
+            data-aos-duration="1700"
+          >
             <img
               src="images/profile_pic.jpg"
               alt="profile_pic"
