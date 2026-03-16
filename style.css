@@ -67,6 +67,16 @@ html {
   z-index: 1000;
 }
 
+.name-header {
+  font-family: "Minecraft";
+  color: white;
+  display: none;
+}
+.name-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .nav-bar {
   display: flex;
   justify-content: space-between;
@@ -199,6 +209,17 @@ body.show-mobile-menu .nav-bar .navigation-content {
   /* full hero height */
 }
 
+.text-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.section-content .img-container {
+  display: none;
+}
+
 /* Hero container */
 .hero-content {
   position: relative; /* needed so video can be absolute inside */
@@ -216,23 +237,11 @@ body.show-mobile-menu .nav-bar .navigation-content {
   height: 100%;
   object-fit: cover; /* scales video to cover container */
   z-index: -1; /* behind content */
+
+  border-radius: 0 0 80px 80px;
 }
 
-.text-description {
-  opacity: 0; /* hidden initially */
-  font-family: "Minecraft";
-  font-size: 1.5rem;
-  text-align: center;
-  padding: 4px 5px 0 5px;
-  color: white;
-
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  transform: translateY(100%);
-  animation: slideIn 1s ease-in-out forwards; /* fade in over 1s */
-  animation-delay: 3s; /* wait 3 seconds before starting */
-}
-
+.text-description,
 .text-description-second {
   opacity: 0; /* hidden initially */
   font-family: "Minecraft";
@@ -245,7 +254,7 @@ body.show-mobile-menu .nav-bar .navigation-content {
   background-color: rgba(0, 0, 0, 0.5);
   transform: translateY(100%);
   animation: slideIn 1s ease-in-out forwards; /* fade in over 1s */
-  animation-delay: 3.3s; /* wait 3 seconds before starting */
+  animation-delay: 3s; /* wait 3 seconds before starting */
 }
 /* About me */
 .about-me-container {
@@ -587,6 +596,287 @@ body.show-mobile-menu .nav-bar .navigation-content {
   color: yellow;
 }
 
+/* ABOUT PAGE */
+
+.about-page {
+  background: #121212;
+  padding-top: 120px;
+}
+
+/* Title */
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-title {
+  font-family: "Minecraft";
+  font-size: 32px;
+  color: white;
+}
+
+/* Profile */
+
+.about-profile {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: #1b1b1b;
+  border: 3px solid #2e2e2e;
+  padding: 30px;
+  max-width: 600px;
+
+  box-shadow: 0 6px 0 #111;
+}
+
+.profile-pic-about {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.profile-info {
+  text-align: center;
+}
+
+.profile-name {
+  font-family: "Minecraft";
+  color: white;
+  font-size: 26px;
+}
+
+.profile-role {
+  font-family: "Minecraft";
+  color: #ccc;
+  margin: 10px 0;
+}
+
+.profile-description {
+  font-family: "Minecraft";
+  color: #aaa;
+  line-height: 1.6;
+}
+
+/* Skills */
+
+.skills-section {
+  margin-top: 60px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.skill-block {
+  font-family: "Minecraft";
+  color: white;
+
+  background: #1b1b1b;
+  border: 3px solid #2e2e2e;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  transition: 0.25s;
+}
+
+.skill-block:hover {
+  border: 3px solid yellow;
+  transform: translateY(-5px);
+}
+
+/* Experience */
+
+.experience-section {
+  margin-top: 60px;
+  padding: 20px;
+}
+
+.quest-card {
+  background: #1b1b1b;
+  border: 3px solid #2e2e2e;
+
+  padding: 20px;
+  margin-bottom: 20px;
+
+  font-family: "Minecraft";
+  color: #ccc;
+}
+
+/* Back */
+
+.about-back {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0;
+}
+
+/* XP Skill Section */
+
+.xp-skills {
+  width: 90%;
+  max-width: 700px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Skill container */
+
+.xp-skill {
+  font-family: "Minecraft";
+  color: white;
+}
+
+/* Skill name row */
+
+.xp-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+/* XP bar background */
+
+.xp-bar {
+  width: 100%;
+  height: 18px;
+
+  background: #1b1b1b;
+  border: 3px solid #2e2e2e;
+
+  box-shadow: 0 4px 0 #111;
+
+  overflow: hidden;
+}
+
+/* XP fill */
+
+.xp-fill {
+  height: 100%;
+
+  background: linear-gradient(to right, #3cff00, #44ff00, #6aff00);
+
+  transition: width 1.5s ease;
+}
+
+/* WORKS PAGE */
+
+.works-page {
+  background: #121212;
+  padding-top: 120px;
+}
+
+/* Title */
+
+.works-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+/* Project Grid */
+
+.projects-grid {
+  width: 90%;
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 30px;
+}
+
+/* Project card */
+
+.project-card {
+  background: #1b1b1b;
+
+  border: 3px solid #2e2e2e;
+
+  box-shadow: 0 6px 0 #111;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  transition: 0.25s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border: 3px solid yellow;
+}
+
+/* Image */
+
+.project-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Info */
+
+.project-info {
+  padding: 20px;
+}
+
+.project-info h3 {
+  font-family: "Minecraft";
+  color: white;
+  margin-bottom: 10px;
+}
+
+.project-info p {
+  font-family: "Minecraft";
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.project-info .texts {
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+
+.project-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Back button */
+
+.works-back {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0;
+}
+
 /* Animations */
 
 @keyframes slideIn {
@@ -615,5 +905,232 @@ body.show-mobile-menu .nav-bar .navigation-content {
 @keyframes scale-animation {
   to {
     transform: scale(1.25);
+  }
+}
+
+/* ========================= */
+/* DESKTOP DESIGN */
+/* ========================= */
+
+@media (min-width: 900px) {
+  /* Button Design */
+  .box-button {
+    cursor: pointer;
+    border: 4px solid black;
+    background-color: gray;
+    padding-bottom: 10px;
+    transition: 0.1s ease-in-out;
+    user-select: none;
+
+    width: 200px;
+    text-align: center;
+  }
+
+  .button {
+    background-color: #dddddd;
+    border: 4px solid #fff;
+    padding: 3px 8px;
+  }
+
+  .button a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    font-family: "Minecraft";
+  }
+
+  .button a:visited {
+    color: black;
+  }
+
+  .box-button:active {
+    padding: 0;
+    margin-bottom: 10px;
+    transform: translateY(10px);
+  }
+
+  /* Navbar */
+  /* NavBar Buttons */
+  .navigation-content .content .box-button {
+    cursor: pointer;
+    border: 4px solid black;
+    background-color: gray;
+    padding-bottom: 10px;
+    transition: 0.1s ease-in-out;
+    user-select: none;
+
+    width: 110px;
+    text-align: center;
+  }
+
+  .navigation-content .content .button {
+    background-color: #dddddd;
+    border: 4px solid #fff;
+    padding: 3px 8px;
+  }
+
+  .navigation-content .content .button a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-family: "Minecraft";
+  }
+
+  .navigation-content .content .button a:visited {
+    color: black;
+  }
+
+  .navigation-content .content .box-button:active {
+    padding: 0;
+    margin-bottom: 10px;
+    transform: translateY(10px);
+  }
+
+  .name-header {
+    font-family: "Minecraft";
+    color: white;
+    display: block;
+  }
+  .navigation-container {
+    /* width: 80%; */
+  }
+
+  .nav-bar {
+    padding: 20px 60px;
+  }
+
+  .nav-bar .img-container img {
+    width: 85px;
+    height: 60px;
+  }
+
+  .hero-content .background-clip {
+    border-radius: 0 0 200px 200px;
+  }
+
+  /* Hide mobile menu buttons */
+
+  #menu-open-button,
+  #menu-close-button {
+    display: none;
+  }
+
+  /* Desktop navigation */
+
+  .nav-bar .navigation-content {
+    position: static;
+    flex-direction: row;
+    background: none;
+    height: auto;
+    width: auto;
+    left: 0;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .nav-bar .navigation-content .content {
+    margin: 0 15px;
+  }
+
+  /* ========================= */
+  /* HERO SECTION */
+  /* ========================= */
+
+  .section-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 8px;
+    max-width: 900px;
+    margin: auto;
+    gap: 40px;
+  }
+
+  .section-content .img-container {
+    display: flex;
+    justify-content: end;
+  }
+
+  .section-content .img-container img {
+    width: 350px;
+    height: 350px;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .text-description,
+  .text-description-second {
+    font-size: 2rem;
+    width: auto;
+    padding: 10px 20px;
+    text-align: left;
+  }
+
+  .section-content .button-container {
+    display: none;
+  }
+
+  /* ========================= */
+  /* ABOUT SECTION */
+  /* ========================= */
+
+  .about-me-container {
+    padding: 80px 0;
+  }
+
+  .about-me-container .img-container img {
+    display: none;
+    width: 320px;
+    height: 320px;
+  }
+
+  .name,
+  .desc {
+    font-size: 2rem;
+  }
+
+  /* ========================= */
+  /* TOOLS GRID */
+  /* ========================= */
+
+  .tools-list {
+    grid-template-columns: repeat(6, 1fr);
+
+    max-width: 900px;
+  }
+
+  /* ========================= */
+  /* PROJECT CAROUSEL */
+  /* ========================= */
+
+  .carousel {
+    justify-content: center;
+  }
+
+  .card {
+    flex: 0 0 260px;
+
+    height: 180px;
+  }
+
+  /* ========================= */
+  /* CONTACT SECTION */
+  /* ========================= */
+
+  .contact-content {
+    max-width: 700px;
+
+    margin: auto;
+  }
+
+  .contact-text {
+    font-size: 1.2rem;
   }
 }
