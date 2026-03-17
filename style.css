@@ -178,6 +178,9 @@ body.show-mobile-menu .nav-bar .navigation-content {
 }
 
 .button a {
+  display: block;
+  width: 100%;
+  height: 100%;
   text-decoration: none;
   color: black;
   font-size: 1.2em;
@@ -220,6 +223,10 @@ body.show-mobile-menu .nav-bar .navigation-content {
   display: none;
 }
 
+.section-content .button-container-desktop {
+  display: none;
+}
+
 /* Hero container */
 .hero-content {
   position: relative; /* needed so video can be absolute inside */
@@ -253,8 +260,6 @@ body.show-mobile-menu .nav-bar .navigation-content {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   transform: translateY(100%);
-  animation: slideIn 1s ease-in-out forwards; /* fade in over 1s */
-  animation-delay: 3s; /* wait 3 seconds before starting */
 }
 /* About me */
 .about-me-container {
@@ -273,11 +278,11 @@ body.show-mobile-menu .nav-bar .navigation-content {
   border-radius: 25px;
   margin-bottom: 20px;
 
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease-in-out;
 }
 
 .img-container img:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .hero-details {
@@ -288,6 +293,10 @@ body.show-mobile-menu .nav-bar .navigation-content {
   color: white;
   text-align: center;
   /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+.desktop-view-details {
+  display: none;
 }
 
 .name,
@@ -394,6 +403,7 @@ body.show-mobile-menu .nav-bar .navigation-content {
   display: flex;
   align-items: center;
   flex-direction: column;
+  gap: 30px;
   padding: 20px 0 20px;
 }
 
@@ -405,7 +415,7 @@ body.show-mobile-menu .nav-bar .navigation-content {
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 
   gap: 20px;
-  margin-top: 40px;
+  margin-top: 10px;
   padding: 0 10px 0 10px;
 
   width: 100%;
@@ -1039,12 +1049,16 @@ body.show-mobile-menu .nav-bar .navigation-content {
   /* HERO SECTION */
   /* ========================= */
 
+  .section-content > * {
+    min-width: 0;
+  }
+
   .section-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
     gap: 8px;
-    max-width: 900px;
+    max-width: 1200px;
     margin: auto;
     gap: 40px;
   }
@@ -1073,6 +1087,10 @@ body.show-mobile-menu .nav-bar .navigation-content {
     text-align: left;
   }
 
+  .section-content .button-container-desktop {
+    display: block;
+  }
+
   .section-content .button-container {
     display: none;
   }
@@ -1080,20 +1098,36 @@ body.show-mobile-menu .nav-bar .navigation-content {
   /* ========================= */
   /* ABOUT SECTION */
   /* ========================= */
+  .desktop-view-details {
+    display: block;
+  }
 
   .about-me-container {
     padding: 80px 0;
   }
-
+  .about-text-container {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
   .about-me-container .img-container img {
     display: none;
     width: 320px;
     height: 320px;
   }
-
+  .text-intro,
+  .about-text-description {
+    font-family: "Minecraft";
+    color: white;
+    font-size: 30px;
+    text-align: center;
+  }
+  .text-intro {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
   .name,
   .desc {
-    font-size: 2rem;
+    display: none;
   }
 
   /* ========================= */
