@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="particle.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -16,11 +17,11 @@
   </head>
   <body>
     <!-- Video Intro -->
-    <div class="intro">
+    <!-- <div class="intro">
       <video id="introVideo" autoplay muted playsinline preload="auto">
         <source src="videos/Boom.mp4" type="video/mp4" />
       </video>
-    </div>
+    </div> -->
 
     <!-- Intro to Portfolio -->
     <header class="header">
@@ -63,6 +64,7 @@
 
     <!-- Introduction -->
     <main>
+      <div id="particle-container"></div>
       <section class="hero-content" id="Home">
         <video
           autoplay
@@ -91,8 +93,8 @@
               data-aos-duration="1300"
             >
               <span class="delayed-text"
-                >Creating Visually unique digital experiences through design,
-                code, and multimedia.</span
+                >Building user-focused digital experiences by combining software
+                engineering, design, and multimedia creativity.</span
               >
             </div>
             <div
@@ -148,12 +150,19 @@
           </div>
           <div class="desktop-view-details">
             <div class="about-text-container">
-              <p class="text-intro">About me</p>
-              <p class="about-text-description">
-                I’m a developer and creative editor who enjoys building
-                interactive projects and visual content. With experience in
-                programming, graphic design, and video editing, I like combining
-                creativity with technology to bring ideas to life.
+              <p class="text-intro" data-aos="fade-up" data-aos-duration="1000">
+                About me
+              </p>
+              <p
+                class="about-text-description"
+                data-aos="fade-up"
+                data-aos-duration="1300"
+              >
+                I am currently a second-year Computer Science student
+                specializing in Software Engineering, passionate about building
+                innovative applications and continuously expanding my knowledge
+                in programming, problem-solving, and modern development
+                practices.
               </p>
             </div>
           </div>
@@ -174,53 +183,99 @@
       <section class="tools">
         <div class="tools-content">
           <div class="text-container">
-            <span class="text">
-              /Tools and <span style="color: yellow">Software</span>
+            <span class="text" data-aos="fade-up" data-aos-duration="800">
+              /Tools and
+              <span style="color: yellow">Software</span>
             </span>
           </div>
+          <div class="tools-carousel">
+            <ul class="tools-list">
+              <li class="tool" data-aos="fade-up" data-aos-duration="1000">
+                <div class="tool-inner">
+                  <i class="fa-brands fa-github"></i>
+                  <span>Github</span>
+                </div>
+              </li>
 
-          <ul class="tools-list">
-            <li class="tool" data-aos="fade-up" data-aos-duration="1000">
-              <div class="tool-inner">
-                <i class="fa-brands fa-github"></i>
-                <span>Github</span>
-              </div>
-            </li>
+              <li class="tool" data-aos="fade-up" data-aos-duration="1200">
+                <div class="tool-inner">
+                  <i class="fa-solid fa-code"></i>
+                  <span>VS Code</span>
+                </div>
+              </li>
 
-            <li class="tool" data-aos="fade-up" data-aos-duration="1200">
-              <div class="tool-inner">
-                <i class="fa-solid fa-code"></i>
-                <span>VS Code</span>
-              </div>
-            </li>
+              <li class="tool" data-aos="fade-up" data-aos-duration="1400">
+                <div class="tool-inner">
+                  <i class="fa-brands fa-figma"></i>
+                  <span>Figma</span>
+                </div>
+              </li>
 
-            <li class="tool" data-aos="fade-up" data-aos-duration="1400">
-              <div class="tool-inner">
-                <i class="fa-brands fa-figma"></i>
-                <span>Figma</span>
-              </div>
-            </li>
+              <li class="tool" data-aos="fade-up" data-aos-duration="1600">
+                <div class="tool-inner">
+                  <i class="fa-brands fa-linkedin"></i>
+                  <span>LinkedIn</span>
+                </div>
+              </li>
 
-            <li class="tool" data-aos="fade-up" data-aos-duration="1600">
-              <div class="tool-inner">
-                <i class="fa-brands fa-linkedin"></i>
-                <span>LinkedIn</span>
-              </div>
-            </li>
+              <li class="tool" data-aos="fade-up" data-aos-duration="1800">
+                <div class="tool-inner">
+                  <i class="fa-solid fa-envelope"></i>
+                  <span>Gmail</span>
+                </div>
+              </li>
+              <li class="tool" data-aos="fade-up" data-aos-duration="2000">
+                <div class="tool-inner">
+                  <i class="fa-brands fa-java"></i>
+                  <span>Java</span>
+                </div>
+              </li>
+            </ul>
+            <!-- Dupicate -->
+            <!-- <ul class="tools-list">
+              <li class="tool" data-aos="fade-up" data-aos-duration="1000">
+                <div class="tool-inner">
+                  <i class="fa-brands fa-github"></i>
+                  <span>Github</span>
+                </div>
+              </li>
 
-            <li class="tool" data-aos="fade-up" data-aos-duration="1800">
-              <div class="tool-inner">
-                <i class="fa-solid fa-envelope"></i>
-                <span>Gmail</span>
-              </div>
-            </li>
-            <li class="tool" data-aos="fade-up" data-aos-duration="2000">
-              <div class="tool-inner">
-                <i class="fa-brands fa-java"></i>
-                <span>Java</span>
-              </div>
-            </li>
-          </ul>
+              <li class="tool" data-aos="fade-up" data-aos-duration="1200">
+                <div class="tool-inner">
+                  <i class="fa-solid fa-code"></i>
+                  <span>VS Code</span>
+                </div>
+              </li>
+
+              <li class="tool" data-aos="fade-up" data-aos-duration="1400">
+                <div class="tool-inner">
+                  <i class="fa-brands fa-figma"></i>
+                  <span>Figma</span>
+                </div>
+              </li>
+
+              <li class="tool" data-aos="fade-up" data-aos-duration="1600">
+                <div class="tool-inner">
+                  <i class="fa-brands fa-linkedin"></i>
+                  <span>LinkedIn</span>
+                </div>
+              </li>
+
+              <li class="tool" data-aos="fade-up" data-aos-duration="1800">
+                <div class="tool-inner">
+                  <i class="fa-solid fa-envelope"></i>
+                  <span>Gmail</span>
+                </div>
+              </li>
+              <li class="tool" data-aos="fade-up" data-aos-duration="2000">
+                <div class="tool-inner">
+                  <i class="fa-brands fa-java"></i>
+                  <span>Java</span>
+                </div>
+              </li>
+            </ul> -->
+          </div>
+
           <div
             class="button-container"
             data-aos="fade-up"
@@ -239,15 +294,29 @@
         <!-- Cards Language-->
         <div class="cards">
           <div class="carousel-section">
-            <div class="text-container">
+            <div
+              class="text-container"
+              data-aos="fade-up"
+              data-aos-duration="800"
+            >
               <span class="text"> /Projects </span>
             </div>
             <div class="carousel" id="carousel">
-              <div class="card">Project 1</div>
-              <div class="card">Project 2</div>
-              <div class="card">Project 3</div>
-              <div class="card">Project 4</div>
-              <div class="card">Project 5</div>
+              <div class="card" data-aos="fade-up" data-aos-duration="1000">
+                Project 1
+              </div>
+              <div class="card" data-aos="fade-up" data-aos-duration="1200">
+                Project 2
+              </div>
+              <div class="card" data-aos="fade-up" data-aos-duration="1300">
+                Project 3
+              </div>
+              <div class="card" data-aos="fade-up" data-aos-duration="1400">
+                Project 4
+              </div>
+              <div class="card" data-aos="fade-up" data-aos-duration="1500">
+                Project 5
+              </div>
             </div>
           </div>
         </div>

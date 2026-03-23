@@ -82,20 +82,34 @@
 
           <!-- Contact Form -->
 
-          <form class="contact-form" data-aos="fade-up" data-aos-delay="400">
+          <form
+            class="contact-form"
+            data-aos="fade-up"
+            data-aos-delay="400"
+            id="contact-form"
+          >
             <div class="form-group">
               <label>Name</label>
-              <input type="text" placeholder="Your Name" required />
+              <input type="text" name="name" placeholder="Your Name" required />
             </div>
 
             <div class="form-group">
               <label>Email</label>
-              <input type="email" placeholder="Your Email" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
             </div>
 
             <div class="form-group">
               <label>Message</label>
-              <textarea rows="6" placeholder="Your Message"></textarea>
+              <textarea
+                name="message"
+                rows="6"
+                placeholder="Your Message"
+              ></textarea>
             </div>
 
             <div class="box-button">
@@ -133,9 +147,14 @@
       </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="../script.js"></script>
     <script>
       AOS.init();
+
+      (function () {
+        emailjs.init("jleEToAF8Us8cpQho");
+      })();
     </script>
   </body>
 </html>

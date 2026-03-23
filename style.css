@@ -263,7 +263,8 @@ body.show-mobile-menu .nav-bar .navigation-content {
 }
 /* About me */
 .about-me-container {
-  background-color: #171615;
+  /* background-color: #171615; */
+  background-color: #121212;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -333,6 +334,9 @@ body.show-mobile-menu .nav-bar .navigation-content {
   overflow: hidden;
   padding: 40px 0;
   background: #121212;
+
+  position: relative;
+  z-index: 10;
 }
 
 .text-container {
@@ -393,17 +397,17 @@ body.show-mobile-menu .nav-bar .navigation-content {
 
 /* Tools area */
 .tools {
-  background-color: #171615;
-  /* background-color: #121212; */
+  /* background-color: #171615; */
+  background-color: #121212;
   padding: 20px 0 0;
 }
 
 /* Container */
 .tools-content {
-  background-image: url("https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Marketplace-Pass_Full-Bleed-Image-1200_Ember-Footer_2880x294.png");
+  /* background-image: url("https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Marketplace-Pass_Full-Bleed-Image-1200_Ember-Footer_2880x294.png");
   background-size: cover;
   background-position: bottom;
-  background-repeat: repeat-x;
+  background-repeat: repeat-x; */
 
   display: flex;
   align-items: center;
@@ -471,7 +475,8 @@ body.show-mobile-menu .nav-bar .navigation-content {
 
 /* Contact Section */
 .contact {
-  background-color: #000000;
+  /* background-color: #000000; */
+  background-color: #121212;
   padding: 20px 20px;
   text-align: center;
 }
@@ -557,6 +562,8 @@ body.show-mobile-menu .nav-bar .navigation-content {
   color: white;
 
   outline: none;
+
+  resize: none;
 }
 
 .form-group input:focus,
@@ -650,6 +657,8 @@ body.show-mobile-menu .nav-bar .navigation-content {
   max-width: 600px;
 
   box-shadow: 0 6px 0 #111;
+
+  z-index: 1;
 }
 
 .profile-pic-about {
@@ -732,6 +741,9 @@ body.show-mobile-menu .nav-bar .navigation-content {
 
   font-family: "Minecraft";
   color: #ccc;
+
+  position: relative;
+  z-index: 1;
 }
 
 /* Back */
@@ -923,6 +935,15 @@ body.show-mobile-menu .nav-bar .navigation-content {
   }
 }
 
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 /* ========================= */
 /* DESKTOP DESIGN */
 /* ========================= */
@@ -1104,17 +1125,28 @@ body.show-mobile-menu .nav-bar .navigation-content {
     display: none;
   }
 
+  .about-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 60px;
+    text-align: center;
+  }
+
   .experience-section {
     margin-top: 0px;
-    margin-right: 150px;
-    margin-left: 150px;
+    margin-right: 130px;
+    margin-left: 130px;
   }
 
   .parent-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 8px;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 40px; /* Space between profile and skills */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the whole grid on the page */
+    align-items: start; /* Aligns both columns to the top */
+    padding: 0 40px;
   }
 
   .desktop-view-details {
@@ -1151,6 +1183,54 @@ body.show-mobile-menu .nav-bar .navigation-content {
 
   .about-hero {
     margin-top: 60px;
+  }
+
+  .skills-desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the skills title and carousel horizontally */
+  }
+
+  .skills-section {
+    width: 100%;
+    margin-top: 0px; /* Remove top margin so it aligns with the profile photo */
+  }
+
+  .skills-carousel {
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px; /* Adjust this to match the width of your profile card */
+    margin: 0 auto;
+
+    user-select: none;
+  }
+
+  .skills-track {
+    display: flex;
+    width: max-content;
+    gap: 20px;
+
+    animation: scroll 18s linear infinite;
+  }
+
+  .skills-grid {
+    display: flex;
+    gap: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .skill-block {
+    width: 140px;
+    height: 100px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
   }
 
   /* ========================= */
