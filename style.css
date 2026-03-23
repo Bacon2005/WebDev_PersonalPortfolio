@@ -417,23 +417,26 @@ body.show-mobile-menu .nav-bar .navigation-content {
 }
 
 /* Grid layout */
+
 .tools-list {
-  list-style: none;
-  display: grid;
-
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-
-  gap: 20px;
-  margin-top: 10px;
-  padding: 0 10px 0 10px;
-
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  gap: 15px;
+  padding: 20px; /* Gives space for the hover 'lift' and glow */
   width: 100%;
+  list-style: none;
+  scrollbar-width: none; /* Hides scrollbar in Firefox */
+}
+
+.tools-list::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
 
 /* Tool slot */
 .tool {
-  display: flex;
-  justify-content: center;
+  flex: 0 0 140px; /* Cards stay exactly 140px wide */
 }
 
 /* Inner card */
@@ -458,8 +461,15 @@ body.show-mobile-menu .nav-bar .navigation-content {
     transform 0.25s ease,
     border 0.25s ease,
     box-shadow 0.25s ease;
-}
 
+  width: 100%;
+}
+.tools-carousel {
+  width: 100%;
+  /* On mobile we want hidden to prevent page shake, 
+     but on desktop we want visible for hover effects */
+  overflow: visible;
+}
 /* Icon */
 .tool-inner i {
   font-size: 28px;
@@ -1238,9 +1248,21 @@ body.show-mobile-menu .nav-bar .navigation-content {
   /* ========================= */
 
   .tools-list {
+    display: grid;
+    /* This creates 6 equal columns and prevents cutting off */
     grid-template-columns: repeat(6, 1fr);
 
-    max-width: 900px;
+    flex-wrap: wrap; /* Reset flex */
+    overflow-x: visible; /* IMPORTANT: Let cards show their hover effects */
+    width: auto; /* Reset width */
+    max-width: 1000px; /* Optional: Keeps the grid from getting too wide */
+    margin: 0 auto; /* Centers the grid */
+    padding: 20px 0;
+  }
+
+  .tool {
+    flex: 1 1 auto; /* Reset flex-basis so grid takes over */
+    width: auto;
   }
 
   /* ========================= */
@@ -1261,13 +1283,16 @@ body.show-mobile-menu .nav-bar .navigation-content {
   /* CONTACT SECTION */
   /* ========================= */
 
-  .contact-content {
-    max-width: 700px;
+  .contact-container {
+    max-width: 900px;
+    max-height: 140px;
+
+    font-size: 1.5rem;
 
     margin: auto;
   }
 
-  .contact-text {
+  .link {
     font-size: 1.2rem;
   }
 }
