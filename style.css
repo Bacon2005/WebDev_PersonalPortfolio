@@ -269,6 +269,11 @@ body.show-mobile-menu .nav-bar .navigation-content {
   align-items: center;
   flex-direction: column;
 }
+
+.parent-grid {
+  display: none;
+}
+
 .img-container {
   padding-top: 20px;
 }
@@ -1003,9 +1008,6 @@ body.show-mobile-menu .nav-bar .navigation-content {
     color: white;
     display: block;
   }
-  .navigation-container {
-    /* width: 80%; */
-  }
 
   .nav-bar {
     padding: 20px 60px;
@@ -1098,6 +1100,23 @@ body.show-mobile-menu .nav-bar .navigation-content {
   /* ========================= */
   /* ABOUT SECTION */
   /* ========================= */
+  .mobile-view {
+    display: none;
+  }
+
+  .experience-section {
+    margin-top: 0px;
+    margin-right: 150px;
+    margin-left: 150px;
+  }
+
+  .parent-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 8px;
+  }
+
   .desktop-view-details {
     display: block;
   }
@@ -1128,6 +1147,10 @@ body.show-mobile-menu .nav-bar .navigation-content {
   .name,
   .desc {
     display: none;
+  }
+
+  .about-hero {
+    margin-top: 60px;
   }
 
   /* ========================= */
