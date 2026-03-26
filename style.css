@@ -7,6 +7,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 
 body {
@@ -355,6 +356,7 @@ body.show-mobile-menu .nav-bar .navigation-content {
   display: flex;
   gap: 20px;
   overflow-x: auto;
+  overflow-y: hidden;
   padding: 20px;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
@@ -386,6 +388,11 @@ body.show-mobile-menu .nav-bar .navigation-content {
 
   flex-shrink: 0;
 
+  position: relative; /* Allows absolute positioning of text over image if desired */
+  overflow: hidden; /* Keeps the image inside the border radius */
+  display: flex;
+  flex-direction: column; /* Stacks text and image vertically */
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -393,6 +400,13 @@ body.show-mobile-menu .nav-bar .navigation-content {
 
 .card:hover {
   transform: scale(1.08);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This crops the image to fit the 150px/180px height */
+  display: block;
 }
 
 /* Tools area */
@@ -711,6 +725,9 @@ body.show-mobile-menu .nav-bar .navigation-content {
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 20px;
   padding: 30px;
+
+  position: relative;
+  z-index: 1;
 }
 
 .skill-block {
@@ -843,6 +860,9 @@ body.show-mobile-menu .nav-bar .navigation-content {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 
   gap: 30px;
+
+  position: relative;
+  z-index: 1;
 }
 
 /* Project card */
@@ -1145,8 +1165,8 @@ body.show-mobile-menu .nav-bar .navigation-content {
 
   .experience-section {
     margin-top: 0px;
-    margin-right: 130px;
-    margin-left: 130px;
+    margin-right: 20%;
+    margin-left: 20%;
   }
 
   .parent-grid {
@@ -1220,7 +1240,7 @@ body.show-mobile-menu .nav-bar .navigation-content {
     width: max-content;
     gap: 20px;
 
-    animation: scroll 18s linear infinite;
+    animation: scroll 18.4s linear infinite;
   }
 
   .skills-grid {
@@ -1241,6 +1261,10 @@ body.show-mobile-menu .nav-bar .navigation-content {
     justify-content: center;
     align-items: center;
     gap: 12px;
+  }
+
+  .quest-card {
+    /* max-width: 100%; */
   }
 
   /* ========================= */
@@ -1294,5 +1318,10 @@ body.show-mobile-menu .nav-bar .navigation-content {
 
   .link {
     font-size: 1.2rem;
+  }
+
+  .form-group input,
+  textarea {
+    font-size: 1.3rem;
   }
 }

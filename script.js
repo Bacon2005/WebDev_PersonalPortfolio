@@ -53,18 +53,30 @@ const observer = new IntersectionObserver(
 elements.forEach((el) => observer.observe(el));
 
 document.addEventListener("DOMContentLoaded", function () {
+  const submitButton = document.querySelector("#submit-btn");
+
   document
     .getElementById("contact-form")
     .addEventListener("submit", function (e) {
       e.preventDefault();
 
+      submitButton.innerText = "Sending...";
+      submitButton.disabled = true;
+
       emailjs.sendForm("service_kxija51", "template_oowoyk8", this).then(
         () => {
-          alert("Message sent!");
+          submitButton.innerText = "Message Sent!";
           this.reset();
+
+          setTimeout(() => {
+            submitButton.innerText = "Send Message";
+            submitButton.disabled = false;
+          }, 3000);
         },
         (error) => {
-          alert("Failed: " + error.text);
+          submitButton.innerText = "Failed";
+          submitButton.disabled = false;
+          console.error(error);
         },
       );
     });
