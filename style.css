@@ -285,7 +285,7 @@ body.show-mobile-menu .nav-bar .navigation-content {
   border-radius: 25px;
   margin-bottom: 20px;
 
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.2s ease-in;
 }
 
 .img-container img:hover {
@@ -444,6 +444,10 @@ body.show-mobile-menu .nav-bar .navigation-content {
   scrollbar-width: none; /* Hides scrollbar in Firefox */
 }
 
+.tools-list.duplicate {
+  display: none;
+}
+
 .tools-list::-webkit-scrollbar {
   display: none; /* Chrome/Safari */
 }
@@ -501,7 +505,7 @@ body.show-mobile-menu .nav-bar .navigation-content {
 .contact {
   /* background-color: #000000; */
   background-color: #121212;
-  padding: 20px 20px;
+  padding: 20px 20px 150px;
   text-align: center;
 }
 .section-title {
@@ -771,6 +775,17 @@ body.show-mobile-menu .nav-bar .navigation-content {
 
   position: relative;
   z-index: 1;
+
+  transition: 0.25s ease;
+}
+
+.quest-card:hover {
+  border: 3px solid yellow;
+  transform: translateY(-5px);
+}
+
+.text.quest-title {
+  padding-bottom: 10px;
 }
 
 /* Back */
@@ -934,6 +949,73 @@ body.show-mobile-menu .nav-bar .navigation-content {
   margin: 60px 0;
 }
 
+/* FAQ Section */
+
+.faq-section {
+  background-color: #121212;
+  padding: 0px 20px 40px;
+  color: white;
+  font-family: "Minecraft";
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 20px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq-item {
+  border: 3px solid #2e2e2e;
+  background: #1b1b1b;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.faq-item:hover {
+  border-color: yellow;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  font-size: 1.1rem;
+  user-select: none;
+}
+
+.faq-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+  transition:
+    max-height 0.4s ease,
+    padding 0.4s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px; /* enough for content */
+  padding: 15px 20px;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg); /* + turns into x/– */
+}
+
 /* Animations */
 
 @keyframes slideIn {
@@ -990,6 +1072,10 @@ body.show-mobile-menu .nav-bar .navigation-content {
 
     width: 200px;
     text-align: center;
+
+    grid-column: 1 / -1; /* span full width of grid */
+    justify-self: center; /* center inside grid */
+    margin-top: 20px;
   }
 
   .button {
@@ -1148,6 +1234,23 @@ body.show-mobile-menu .nav-bar .navigation-content {
     display: none;
   }
 
+  .about-tools-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Keeps them aligned at the top */
+    justify-content: center;
+    gap: 50px; /* Space between the two sections */
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0px 40px;
+  }
+
+  .aboutme,
+  .tools {
+    flex: 1;
+    min-width: 0; /* Prevents overflow issues */
+  }
+
   /* ========================= */
   /* ABOUT SECTION */
   /* ========================= */
@@ -1156,11 +1259,8 @@ body.show-mobile-menu .nav-bar .navigation-content {
   }
 
   .about-text-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    text-align: left;
     margin-top: 60px;
-    text-align: center;
   }
 
   .experience-section {
@@ -1181,10 +1281,13 @@ body.show-mobile-menu .nav-bar .navigation-content {
 
   .desktop-view-details {
     display: block;
+
+    border-right: 2px solid #333; /* Adds a subtle separator */
+    padding-right: 40px;
   }
 
   .about-me-container {
-    padding: 80px 0;
+    padding: 0px 0 60px;
   }
   .about-text-container {
     margin-right: 30px;
@@ -1200,7 +1303,7 @@ body.show-mobile-menu .nav-bar .navigation-content {
     font-family: "Minecraft";
     color: white;
     font-size: 30px;
-    text-align: center;
+    text-align: left;
   }
   .text-intro {
     font-size: 50px;
@@ -1263,30 +1366,76 @@ body.show-mobile-menu .nav-bar .navigation-content {
     gap: 12px;
   }
 
-  .quest-card {
-    /* max-width: 100%; */
-  }
-
   /* ========================= */
   /* TOOLS GRID */
   /* ========================= */
-
-  .tools-list {
+  .tools-list.duplicate {
+    display: flex;
+  }
+  .tools {
+    flex: 1;
+    min-width: 0; /* Critical: allows flex items to shrink below content size */
+    position: relative;
+  }
+  .tools-track {
+    display: flex;
+    width: max-content;
+    gap: 0px;
+    animation: scroll 18.4s linear infinite;
+  }
+  .tools-carousel {
+    width: 100%;
+    overflow: hidden; /* This stops icons from sliding over the About text */
+    position: relative;
+    user-select: none;
+    padding: 20px 0;
+  }
+  /* .tools-list {
     display: grid;
-    /* This creates 6 equal columns and prevents cutting off */
+    
     grid-template-columns: repeat(6, 1fr);
 
-    flex-wrap: wrap; /* Reset flex */
-    overflow-x: visible; /* IMPORTANT: Let cards show their hover effects */
-    width: auto; /* Reset width */
-    max-width: 1000px; /* Optional: Keeps the grid from getting too wide */
-    margin: 0 auto; /* Centers the grid */
+    flex-wrap: wrap;
+    overflow-x: visible; 
+    width: auto;
+    max-width: 1000px; 
+    margin: 0 auto;
     padding: 20px 0;
+  } */
+
+  .tools-list {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* 3 columns instead of 6 since it's narrower */
+    /* gap: 15px; */
+    margin-left: 0px;
+    margin-right: 0px;
   }
 
   .tool {
     flex: 1 1 auto; /* Reset flex-basis so grid takes over */
     width: auto;
+  }
+
+  .tools-carousel::before,
+  .tools-carousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    z-index: 2;
+  }
+
+  .tools-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, #121212, transparent);
+  }
+
+  .tools-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, #121212, transparent);
   }
 
   /* ========================= */
@@ -1307,13 +1456,36 @@ body.show-mobile-menu .nav-bar .navigation-content {
   /* CONTACT SECTION */
   /* ========================= */
 
-  .contact-container {
-    max-width: 900px;
-    max-height: 140px;
+  .contact-content {
+    /* border: 1px solid #333;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px; */
 
-    font-size: 1.5rem;
+    display: grid;
+    /* Creates two columns: one for Title, one for Text */
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center; /* Vertically centers the title with the text */
+    text-align: left;
+  }
 
-    margin: auto;
+  .section-title {
+    grid-column: 1; /* Force title to left column */
+    font-size: 3rem;
+    margin: 0;
+
+    border-right: 2px solid #333; /* Adds a subtle separator */
+    padding-right: 40px;
+
+    text-align: center;
+  }
+
+  .contact-text {
+    grid-column: 2; /* Force text to right column */
+    margin: 0;
   }
 
   .link {

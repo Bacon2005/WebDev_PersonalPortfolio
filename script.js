@@ -82,6 +82,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach((item) => {
+  const icon = item.querySelector(".faq-icon");
+  item.querySelector(".faq-question").addEventListener("click", () => {
+    // Close other items if needed (optional)
+    faqItems.forEach((other) => {
+      if (other !== item) {
+        other.classList.remove("active");
+        other.querySelector(".faq-icon").textContent = "+";
+      }
+    });
+
+    // Toggle this item
+    item.classList.toggle("active");
+
+    // Update icon
+    icon.textContent = item.classList.contains("active") ? "–" : "+";
+  });
+});
+
 //particles script
 
 const container = document.getElementById("particle-container");
