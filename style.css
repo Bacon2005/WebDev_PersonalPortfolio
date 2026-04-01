@@ -860,6 +860,7 @@ body.show-mobile-menu .nav-bar .navigation-content {
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 /* Project Grid */
