@@ -14,6 +14,9 @@
   </head>
 
   <body>
+    <div id="loader">
+      <div class="loader-content">Loading...</div>
+    </div>
     <!-- NAVBAR -->
     <header class="header">
       <div class="navigation-container">
@@ -96,7 +99,9 @@
             <div class="project-buttons">
               <div class="box-button">
                 <div class="button">
-                  <a href="../index.html">Live</a>
+                  <a href="#" class="preview-btn" data-project="portfolio"
+                    >Details</a
+                  >
                 </div>
               </div>
 
@@ -131,7 +136,9 @@
             <div class="project-buttons">
               <div class="box-button">
                 <div class="button">
-                  <a href="#">Demo</a>
+                  <a href="#" class="preview-btn" data-project="casino"
+                    >Details</a
+                  >
                 </div>
               </div>
 
@@ -163,7 +170,9 @@
             <div class="project-buttons">
               <div class="box-button">
                 <div class="button">
-                  <a href="#">Preview</a>
+                  <a href="#" class="preview-btn" data-project="bank"
+                    >Details</a
+                  >
                 </div>
               </div>
 
@@ -197,7 +206,9 @@
             <div class="project-buttons">
               <div class="box-button">
                 <div class="button">
-                  <a href="#">Preview</a>
+                  <a href="#" class="preview-btn" data-project="laitte"
+                    >Details</a
+                  >
                 </div>
               </div>
 
@@ -220,6 +231,29 @@
         </div>
       </section>
     </main>
+
+    <!-- MODAL -->
+    <div id="project-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+
+        <h2 class="modal-title" id="modal-title"></h2>
+
+        <p class="modal-context">
+          <strong>Context:</strong> <span id="modal-context"></span>
+        </p>
+
+        <p class="modal-context">
+          <strong>Tools:</strong> <span id="modal-tools"></span>
+        </p>
+
+        <div class="modal-images" id="modal-images"></div>
+
+        <p class="modal-reflection">
+          <strong>Reflection:</strong> <span id="modal-reflection"></span>
+        </p>
+      </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="../script.js"></script>
   </body>

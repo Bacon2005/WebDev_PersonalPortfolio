@@ -14,12 +14,97 @@ body {
   background-color: #121212;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 #about-me {
   scroll-margin-top: 80px; /* height of your fixed navbar */
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85); /* DARK BACKDROP */
+}
+
+.modal-content {
+  background: #1e1e1e;
+  color: white;
+  margin: 5% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 700px;
+  border-radius: 10px;
+  position: relative;
+  font-family: "Minecraft";
+}
+
+.modal-title,
+.modal-reflection {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.modal-context {
+  padding-bottom: 20px;
+}
+
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.modal-images img {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+/* Loader overlay */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #121212;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
+}
+
+.loader-content {
+  font-family: "Minecraft";
+  font-size: 25px;
+}
+
+/* Hidden state */
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* Video Overlay */
