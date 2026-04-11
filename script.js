@@ -14,13 +14,6 @@ AOS.init({
   duration: 1000, // default duration
 });
 
-//video fade in
-const bgvideo = document.querySelector(".background-clip");
-
-bgvideo.addEventListener("canplaythrough", () => {
-  bgvideo.classList.add("loaded");
-});
-
 // video.addEventListener("ended", () => {
 //   intro.classList.add("fade-out");
 //   main.classList.add("show");
@@ -30,69 +23,21 @@ bgvideo.addEventListener("canplaythrough", () => {
 //   }, 3000); // match your 3s CSS transition
 // });
 
-// Fade IN when page loads
-window.addEventListener("load", () => {
-  document.body.classList.add("loaded");
-
-  const loader = document.getElementById("loader");
-  loader.classList.add("hidden");
-});
-
-// Fade OUT when leaving page
-document.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", function (e) {
-    const url = this.href;
-
-    // Ignore if opening new tab or anchor link
-    if (this.target === "_blank" || url.includes("#")) return;
-
-    e.preventDefault();
-
-    document.getElementById("loader").classList.remove("hidden");
-
-    setTimeout(() => {
-      window.location.href = url;
-    }, 400); // match CSS transition
-  });
-});
-
-//particles script
-
-const container = document.getElementById("particle-container");
-const particleCount = 40; // Change this number to add more!
-
-for (let i = 0; i < particleCount; i++) {
-  const particle = document.createElement("div");
-  particle.className = "particle";
-
-  // Randomize starting position (0 to 100% of screen width)
-  const x = Math.random() * 100;
-
-  // Randomize size (between 5px and 15px)
-  const size = Math.random() * 10 + 5;
-
-  // Randomize speed/duration (between 5s and 15s)
-  const duration = Math.random() * 10 + 5;
-
-  // Randomize delay so they don't all start at once
-  const delay = Math.random() * 10;
-
-  // Apply styles directly
-  particle.style.left = `${x}%`;
-  particle.style.width = `${size}px`;
-  particle.style.height = `${size}px`;
-  particle.style.animationDuration = `${duration}s`;
-  particle.style.animationDelay = `-${delay}s`; // Negative delay starts them mid-animation
-
-  container.appendChild(particle);
-}
-
 menuOpenButton.addEventListener("click", () => {
+  const isOpen = document.body.classList.contains("show-mobile-menu");
   document.body.classList.toggle("show-mobile-menu");
+  if (document.body.classList.contains("show-mobile-menu")) {
+    document.body.classList.add("no-scroll");
+  } else {
+    document.body.classList.remove("no-scroll");
+  }
   console.log("Burger pressed");
 });
 
-menuCloseButton.addEventListener("click", () => menuOpenButton.click());
+menuCloseButton.addEventListener("click", () => {
+  document.body.classList.remove("show-mobile-menu");
+  document.body.classList.remove("no-scroll");
+});
 
 const elements = document.querySelectorAll(".name, .desc");
 
@@ -111,34 +56,24 @@ const observer = new IntersectionObserver(
 
 elements.forEach((el) => observer.observe(el));
 
-document.addEventListener("DOMContentLoaded", function () {
-  const submitButton = document.querySelector("#submit-btn");
+// Navigation links auto-close menu
+document.querySelector(".navigation-content").addEventListener("click", (e) => {
+  const link = e.target.closest(".navigation-content a");
 
-  document
-    .getElementById("contact-form")
-    .addEventListener("submit", function (e) {
-      e.preventDefault();
+  if (!link) return;
 
-      submitButton.innerText = "Sending...";
-      submitButton.disabled = true;
+  const url = link.getAttribute("href");
 
-      emailjs.sendForm("service_kxija51", "template_oowoyk8", this).then(
-        () => {
-          submitButton.innerText = "Message Sent!";
-          this.reset();
+  if (!url || url.startsWith("#") || url.startsWith("mailto:")) return;
 
-          setTimeout(() => {
-            submitButton.innerText = "Send Message";
-            submitButton.disabled = false;
-          }, 3000);
-        },
-        (error) => {
-          submitButton.innerText = "Failed";
-          submitButton.disabled = false;
-          console.error(error);
-        },
-      );
-    });
+  e.preventDefault();
+
+  document.body.classList.remove("show-mobile-menu");
+  document.body.classList.remove("no-scroll");
+
+  setTimeout(() => {
+    window.location.href = url;
+  }, 300);
 });
 
 //faq script
