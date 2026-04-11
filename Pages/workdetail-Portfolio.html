@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work Details | Tyrone Niere</title>
+
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../particle.css" />
+    <link rel="stylesheet" href="../workdetails.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+
+  <body class="work-detail-page">
+    <!-- NAVBAR (same as your other pages) -->
+    <header class="header">
+      <div class="navigation-container">
+        <nav class="nav-bar">
+          <div class="name-container">
+            <a href="../index.html">
+              <img src="../images/logo.png" alt="logo" class="logo" />
+            </a>
+            <h3 class="name-header">Tyrone Niere | Portfolio</h3>
+          </div>
+
+          <ul class="navigation-content">
+            <a id="menu-close-button" class="fas fa-times"></a>
+
+            <li class="content">
+              <div class="box-button">
+                <div class="button">
+                  <a href="../index.html">Home</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="content">
+              <div class="box-button">
+                <div class="button">
+                  <a href="about.html">About</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="content">
+              <div class="box-button">
+                <div class="button">
+                  <a href="works.html">Work</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="content">
+              <div class="box-button">
+                <div class="button">
+                  <a href="contact.html">Contact</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <a id="menu-open-button" class="fas fa-bars"></a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <main class="work-detail">
+      <div id="particle-container"></div>
+      <!-- TITLE -->
+      <section class="work-header">
+        <h1 class="work-title">Portfolio Website</h1>
+        <p class="work-subtitle">Work Detail Page</p>
+      </section>
+
+      <!-- CONTENT GRID (mobile-first stacked) -->
+      <section class="work-container">
+        <!-- Context -->
+        <div class="work-box">
+          <h2>Context / Problem</h2>
+          <p>
+            This project was created to build a personal portfolio that
+            showcases my skills, projects, and growth as a developer in a
+            Minecraft-themed style. The challenge was to design something
+            visually unique while maintaining usability and responsiveness.
+          </p>
+        </div>
+
+        <!-- Tools -->
+        <div class="work-box">
+          <h2>Tools / Technologies</h2>
+          <ul>
+            <li>HTML5</li>
+            <li>CSS3 (Mobile-first design)</li>
+            <li>JavaScript</li>
+            <li>Font Awesome</li>
+            <li>Vanilla Animations</li>
+          </ul>
+        </div>
+
+        <!-- Visuals -->
+        <div class="work-box">
+          <h2>Visuals</h2>
+
+          <div class="work-images">
+            <img src="../images/project1.jpg" alt="screenshot 1" />
+          </div>
+        </div>
+
+        <!-- Reflection -->
+        <div class="work-box">
+          <h2>Reflection (What I’d Improve Next)</h2>
+          <p>
+            If I were to improve this project, I would focus on better
+            performance optimization, smoother animations, and a more dynamic
+            content system (such as loading projects dynamically using JSON or a
+            backend).
+          </p>
+        </div>
+      </section>
+
+      <!-- BACK BUTTON -->
+      <section class="work-back">
+        <div class="box-button">
+          <div class="button">
+            <a href="works.html">Back to Works</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="../script.js"></script>
+    <script src="../particles.js"></script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+/* ========================= */
+/* WORK DETAIL PAGE */
+/* ========================= */
+
+.work-detail {
+  background: #121212;
+  padding-top: 120px;
+  color: white;
+  font-family: "Minecraft";
+}
+
+/* Header */
+.work-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.work-title {
+  font-size: 28px;
+}
+
+.work-subtitle {
+  color: #aaa;
+  margin-top: 5px;
+}
+
+/* Container (mobile-first stacked) */
+.work-container {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card box */
+.work-box {
+  background: #1b1b1b;
+  border: 3px solid #2e2e2e;
+  box-shadow: 0 6px 0 #111;
+
+  padding: 20px;
+  transition: 0.2s ease;
+}
+
+.work-box:hover {
+  border: 3px solid yellow;
+  transform: translateY(-4px);
+}
+
+/* Titles */
+.work-box h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+/* Text */
+.work-box p,
+.work-box li {
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Tools list */
+.work-box ul {
+  padding-left: 20px;
+}
+
+/* Images */
+.work-images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.work-images img {
+  width: 100%;
+  border: 3px solid #2e2e2e;
+  border-radius: 6px;
+}
+
+/* Back button */
+.work-back {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+/* Desktop enhancement */
+@media (min-width: 900px) {
+  .work-title {
+    padding-top: 60px;
+    font-size: 40px;
+  }
+}
