@@ -14,6 +14,13 @@ AOS.init({
   duration: 1000, // default duration
 });
 
+//video fade in
+const bgvideo = document.querySelector(".background-clip");
+
+bgvideo.addEventListener("canplaythrough", () => {
+  bgvideo.classList.add("loaded");
+});
+
 // video.addEventListener("ended", () => {
 //   intro.classList.add("fade-out");
 //   main.classList.add("show");
@@ -79,13 +86,6 @@ for (let i = 0; i < particleCount; i++) {
 
   container.appendChild(particle);
 }
-
-//video fade in
-const bgvideo = document.querySelector(".background-clip");
-
-bgvideo.addEventListener("canplaythrough", () => {
-  bgvideo.classList.add("loaded");
-});
 
 menuOpenButton.addEventListener("click", () => {
   document.body.classList.toggle("show-mobile-menu");
